@@ -13,6 +13,8 @@ import org.springframework.web.context.request.ServletRequestAttributes;
 import javax.servlet.http.HttpServletRequest;
 
 /**
+ * 动态日志 过滤器
+ *
  * @author xiaoyao91
  * @date 2022-01-28 00:09
  * @since 1.0
