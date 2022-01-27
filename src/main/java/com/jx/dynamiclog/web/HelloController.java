@@ -21,10 +21,9 @@ public class HelloController {
         Map<String, String> map = new HashMap<String, String>();
         map.put("code","200");
         map.put("message","hello");
-
-//        ThreadContextMapFactory.createThreadContextMap().put("User1", "111");
-
-        log.info("hi >>>>>>>>>>>>>");
+        log.debug("hi debug>>>>>>>>>>>>>");
+        log.info("hi info>>>>>>>>>>>>>");
+        log.error("hi error>>>>>>>>>>>>>");
         return map;
     }
 

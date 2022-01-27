@@ -3,9 +3,11 @@
 
     <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
         <layout class="ch.qos.logback.classic.PatternLayout">
-            <Pattern>%d{yyyy-MM-dd HH:mm:ss SSS} [%thread] %-5level %logger{36}:%L #%M  - %msg%n</Pattern>
+            <Pattern>%d{yyyy-MM-dd HH:mm:ss SSS} [%thread] %-5level %logger{36}:%L #%M - %msg%n</Pattern>
         </layout>
     </appender>
+
+    <turboFilter class="com.jx.dynamiclog.logfilter.DebugLevelTurboFilter"/>
 
     <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
         <file>log/server.log</file>
@@ -14,7 +16,7 @@
             <maxHistory>30</maxHistory>
         </rollingPolicy>
         <encoder>
-            <pattern>%d{yyyy-MM-dd HH:mm:ss SSS} [%thread] %-5level %logger{36}:%L %M  - %msg%n</pattern>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss SSS} [%thread] %-5level %logger{36}:%L %M - %msg%n</pattern>
         </encoder>
     </appender>
 
@@ -30,37 +32,27 @@
             <maxHistory>30</maxHistory>
         </rollingPolicy>
         <encoder>
-            <pattern>%d{yyyy-MM-dd HH:mm:ss SSS} [%thread] %-5level %logger{36}:%L %M  - %msg%n</pattern>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss SSS} [%thread] %-5level %logger{36}:%L %M - %msg%n</pattern>
         </encoder>
     </appender>
 
     <logger name="com.jx" level="INFO" additivity="false">
-        <appender-ref ref="CONSOLE" />
-        <appender-ref ref="FILE" />
-        <appender-ref ref="ERROR_FILE" />
-    </logger>
-
-    <logger name="com.jx" level="DEBUG" additivity="false">
-        <appender-ref ref="CONSOLE" />
-        <appender-ref ref="FILE" />
-        <appender-ref ref="ERROR_FILE" />
-
+        <appender-ref ref="CONSOLE"/>
+        <appender-ref ref="FILE"/>
+        <appender-ref ref="ERROR_FILE"/>
     </logger>
 
     <logger name="org.springframework" level="INFO" additivity="false">
-        <appender-ref ref="CONSOLE" />
-        <appender-ref ref="FILE" />
-        <appender-ref ref="ERROR_FILE" />
+        <appender-ref ref="CONSOLE"/>
+        <appender-ref ref="FILE"/>
+        <appender-ref ref="ERROR_FILE"/>
     </logger>
 
     <root level="INFO">
-        <appender-ref ref="CONSOLE" />
-        <appender-ref ref="FILE" />
-        <appender-ref ref="ERROR_FILE" />
+        <appender-ref ref="CONSOLE"/>
+        <appender-ref ref="FILE"/>
+        <appender-ref ref="ERROR_FILE"/>
     </root>
-
-
-
 
 
 </configuration>
