@@ -34,34 +34,30 @@
         </encoder>
     </appender>
 
-    <loggers level="INFO">
+    <logger name="com.jx" level="INFO" additivity="false">
+        <appender-ref ref="CONSOLE" />
+        <appender-ref ref="FILE" />
+        <appender-ref ref="ERROR_FILE" />
+    </logger>
 
-        <logger name="com.jx" level="INFO" additivity="false">
-            <appender-ref ref="CONSOLE" />
-            <appender-ref ref="FILE" />
-            <appender-ref ref="ERROR_FILE" />
-        </logger>
+    <logger name="com.jx" level="DEBUG" additivity="false">
+        <appender-ref ref="CONSOLE" />
+        <appender-ref ref="FILE" />
+        <appender-ref ref="ERROR_FILE" />
 
-        <logger name="com.jx" level="DEBUG" additivity="false">
-            <appender-ref ref="CONSOLE" />
-            <appender-ref ref="FILE" />
-            <appender-ref ref="ERROR_FILE" />
+    </logger>
 
-        </logger>
+    <logger name="org.springframework" level="INFO" additivity="false">
+        <appender-ref ref="CONSOLE" />
+        <appender-ref ref="FILE" />
+        <appender-ref ref="ERROR_FILE" />
+    </logger>
 
-        <logger name="org.springframework" level="INFO" additivity="false">
-            <appender-ref ref="CONSOLE" />
-            <appender-ref ref="FILE" />
-            <appender-ref ref="ERROR_FILE" />
-        </logger>
-
-        <root level="INFO">
-            <appender-ref ref="CONSOLE" />
-            <appender-ref ref="FILE" />
-            <appender-ref ref="ERROR_FILE" />
-        </root>
-
-    </loggers>
+    <root level="INFO">
+        <appender-ref ref="CONSOLE" />
+        <appender-ref ref="FILE" />
+        <appender-ref ref="ERROR_FILE" />
+    </root>
 
 
 
