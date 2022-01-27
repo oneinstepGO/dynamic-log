@@ -16,6 +16,11 @@ import java.util.Map;
 @Slf4j
 public class HelloController {
 
+    /**
+     * curl --location --request GET 'localhost:9090/hello' \
+     * --header 'X-Debug: true'
+     * @return
+     */
     @GetMapping("hello")
     public Map<String, String> hello() {
         Map<String, String> map = new HashMap<String, String>();
